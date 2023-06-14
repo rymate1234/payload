@@ -194,6 +194,7 @@
     "webpack-hot-middleware": "^2.25.3"
   },
   "devDependencies": {
+    "@faker-js/faker": "^8.0.2",
     "@playwright/test": "^1.32.3",
     "@release-it/conventional-changelog": "^5.1.1",
     "@swc/jest": "^0.2.24",
