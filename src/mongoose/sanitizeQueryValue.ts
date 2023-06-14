@@ -110,8 +110,7 @@ export const sanitizeQueryValue = ({ ctx, field, path, operator, val, hasCustomI
     }
 
     if (operator === 'like' && typeof formattedValue === 'string') {
-      const $regex = wordBoundariesRegex(formattedValue);
-      formattedValue = { $regex };
+      formattedValue = { $regex: formattedValue, $options: 'i' };
     }
   }
 
