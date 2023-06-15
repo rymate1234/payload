@@ -12,8 +12,15 @@ export const PostsCollection: CollectionConfig = {
   fields: [
     {
       name: 'text',
-      type: 'text',
-      index: true,
+      type: 'text'
+    },
+    {
+      name: 'associatedMedia',
+      type: 'relationship',
+      relationTo: [mediaSlug, mediaAltSlug],
+      access: {
+        create: () => true
+      },
     },
   ],
 };

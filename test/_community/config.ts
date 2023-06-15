@@ -32,16 +32,11 @@ export default buildConfig({
       },
     });
 
-    for (let i = 0; i < 10000; i += 1) {
-      // eslint-disable-next-line no-await-in-loop
-      await payload.create({
-        collection: postsSlug,
-        data: {
-          text: faker.lorem.sentences({ min: 1, max: 5 }),
-        },
-      });
-    }
-
-    payload.collections['users'].Model.base.set('debug', true)
+    await payload.create({
+      collection: postsSlug,
+      data: {
+        text: faker.lorem.sentences({ min: 1, max: 5 }),
+      },
+    });
   },
 });
