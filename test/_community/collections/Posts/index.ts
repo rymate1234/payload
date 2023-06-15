@@ -18,6 +18,15 @@ export const PostsCollection: CollectionConfig = {
         create: () => true,
         update: () => false,
       },
+      hooks: {
+        afterRead: [async ({ req }) => {
+          // add 1s delay to simulate large request
+          await new Promise((resolve) => setTimeout(resolve, 1000));
+
+          // should read GraphQL
+          console.log('afterRead', req.payloadAPI);
+        }],
+      },
     },
   ],
 };

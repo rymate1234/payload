@@ -9,5 +9,10 @@ export const MenuGlobal: GlobalConfig = {
       name: 'globalText',
       type: 'text',
     },
+    {
+      name: 'globalAssociatedMedia',
+      type: 'upload',
+      relationTo: 'media',
+    },
   ],
 };
