@@ -15,14 +15,5 @@ export const PostsCollection: CollectionConfig = {
       type: 'text',
       index: true,
     },
-    {
-      name: 'associatedMedia',
-      type: 'relationship',
-      relationTo: [mediaSlug, mediaAltSlug],
-      access: {
-        create: () => true,
-        update: () => false,
-      },
-    },
   ],
 };
